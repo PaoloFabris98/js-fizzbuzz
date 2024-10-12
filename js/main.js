@@ -1,6 +1,6 @@
 
 // varriabili
-const interaction = 100 ;
+const interaction = 101 ;
 const start = 0;
 const fizz = 3;
 const fizzWord = "Fizz";
