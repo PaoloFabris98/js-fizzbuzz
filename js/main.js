@@ -8,20 +8,35 @@ const Buzz = 5;
 const buzzWord = "Buzz";
 
 
-for(let i = start; i <= interaction; i++){
+const row = document.getElementById("main-row");
 
-    
+
+for(let i = start; i <= interaction; i++){
     if((i%fizz === 0) && (i%Buzz === 0)){
         //se multipli di 3 e di 5
         console.log(i + ". " + fizzWord + buzzWord);
+        row.innerHTML += `<div class="col-3">
+                            ${i} ${fizzWord} ${buzzWord}
+                        </div>`
     } else if(i%Buzz === 0){
         //se multipli di 5
         console.log(i + ". " + buzzWord);
+        row.innerHTML += `<div class="col-3">
+                            ${i} ${buzzWord}
+                        </div>`
     } else if (i%fizz === 0){
         // se multipli di 3
+        
         console.log(i + ". " + fizzWord);
+        row.innerHTML += `<div class="col-3">
+                            ${i} ${fizzWord}
+                        </div>`
     } else {
         //tutti gli altri
         console.log(i + ".");
+        row.innerHTML += `<div class="col-3">
+                            ${i}
+                        </div>`
     };
+
 };
