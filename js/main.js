@@ -16,7 +16,7 @@ for(let i = start; i <= interaction; i++){
         //se multipli di 3 e di 5
         console.log(i + ". " + fizzWord + buzzWord);
         row.innerHTML += `<div class="col-3">
-                            ${i} ${fizzWord} ${buzzWord}
+                            ${i} ${fizzWord}${buzzWord}
                         </div>`
     } else if(i%Buzz === 0){
         //se multipli di 5
