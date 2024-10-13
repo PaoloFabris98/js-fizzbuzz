@@ -1,34 +1,44 @@
 
 // varriabili
-const interaction = 101 ;
+const buttonSubmit = document.getElementById("submit");
+const boxs = document.getElementById("main-row");
+let interaction = document.getElementById("itterations") ;
 const start = 0;
-const fizz = 3;
+let fizz = document.getElementById("divisore1");
 const fizzWord = "Fizz";
-const Buzz = 5;
+let Buzz = document.getElementById("divisore2");
 const buzzWord = "Buzz";
 
 
 const row = document.getElementById("main-row");
 
+buttonSubmit.addEventListener("click", function (event) {
+    event.preventDefault();
 
-for(let i = start; i <= interaction; i++){
-    row.innerHTML += `<div class="col-2 bg-success p-2 text-white bg-opacity-75 rounded-pill border " id="inserted-${i}"></div>`
-    let inserted = document.getElementById(`inserted-${i}`)
-    if((i%fizz === 0) && (i%Buzz === 0)){
-        //se multipli di 3 e di 5
-        console.log(i + ". " + fizzWord + buzzWord);
-        inserted.innerHTML += `${i} ${fizzWord}${buzzWord}`;
-    } else if(i%Buzz === 0){
-        //se multipli di 5
-        console.log(i + ". " + buzzWord);
-        inserted.innerHTML += `${i} ${buzzWord}`;
-    } else if (i%fizz === 0){
-        // se multipli di 3
-        console.log(i + ". " + fizzWord);
-        inserted.innerHTML += `${i} ${fizzWord}`;
-    } else {
-        //tutti gli altri
-        console.log(i + ".");
-        inserted.innerHTML += `${i}`;
+    let it = Number(interaction.value);
+    let num1 = Number(fizz.value);
+    let num2 = Number(Buzz.value);
+
+    for(let i = start; i <= it; i++){
+        boxs.classList.remove("d-none");
+        row.innerHTML += `<div class="col-2" id="inserted-case-${i}"><div class="bg-success p-3 text-white text-center rounded-pill mt-2 border" id="inserted-${i}"></div></div>`;
+        let inserted = document.getElementById(`inserted-${i}`);
+        if((i%num1 === 0) && (i%num2 === 0)){
+            //se multipli di 3 e di 5
+            console.log(i + ". " + fizzWord + buzzWord);
+            inserted.innerHTML += `${i} ${fizzWord}${buzzWord}`
+        } else if(i%num2 === 0){
+            //se multipli di 5
+            console.log(i + ". " + buzzWord);
+            inserted.innerHTML += `${i} ${buzzWord}`;
+        } else if (i%num1 === 0){
+            // se multipli di 3
+            console.log(i + ". " + fizzWord);
+            inserted.innerHTML += `${i} ${fizzWord}`;
+        } else {
+            //tutti gli altri
+            console.log(i + ".");
+            inserted.innerHTML += `${i}`;
+        };
     };
-};
+});

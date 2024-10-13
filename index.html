@@ -14,11 +14,30 @@
 
 <body>
 
+    <header class="w-100 bg-black text-center text-white" id="navBar">
+        <h1>Numeri Divisibili</h1>
+    </header>
+
     <main class="container">
-        <div class="row bg-dark text-center text-light align-content gx-5" id="main-row">
-            
-        </div>
+        <form class="w-25 mx-auto d-flex flex-column align-items-center">
+            <div class="mb-1 justify-content-center">
+                <label for="itterations" class="form-label text-center">Quanti numeri si vogliono elaborare?</label>
+                <input type="number" class="form-control text-center" id="itterations" aria-describedby="itterations">
+            </div>
+            <p>Divisibile per:</p>
+            <div class="justify-content-center">
+                <label for="divisore1" class="form-label text-center">Primo Numero</label>
+                <input type="number" class="form-control text-center" id="divisore1" aria-describedby="divisore1">
+            </div>
+            <div class="justify-content-center">
+                <label for="divisore2" class="form-label text-center">Secondo Numero</label>
+                <input type="number" class="form-control text-center" id="divisore2" aria-describedby="divisore2">
+            </div>
+            <button type="submit" class="btn btn-primary mt-1" id="submit">Calcola</button>
+        </form>
+        <div class="row bg-dark text-center text-light align-content d-none" id="main-row"></div>
     </main>
+
     <script src="js/main.js"></script>
 </body>
 
