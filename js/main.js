@@ -3,6 +3,7 @@
 const buttonSubmit = document.getElementById("submit");
 const boxs = document.getElementById("main-row");
 const allert = document.getElementById("Alert");
+const otherStats = document.getElementById("other-stats");
 let fizz = document.getElementById("divisore1");
 let Buzz = document.getElementById("divisore2");
 
@@ -18,6 +19,10 @@ buttonSubmit.addEventListener("click", function (event) {
     let it = Number(interaction.value);
     let num1 = Number(fizz.value);
     let num2 = Number(Buzz.value);
+    let stats1 = 0;
+    let stats2 = 0;
+    let stats3 = 0;
+    let stats4 = 0;
 
     if (isNaN(it) || isNaN(num1) || isNaN(num2)) {
         boxs.classList.add("d-none");
@@ -34,21 +39,33 @@ buttonSubmit.addEventListener("click", function (event) {
             let inserted = document.getElementById(`inserted-${i}`);
             if ((i % num1 === 0) && (i % num2 === 0)) {
                 // se multipli di 3 e di 5
+                stats1++;
                 console.log(i + ". " + fizzWord + buzzWord);
                 inserted.innerHTML += `${i} ${fizzWord}${buzzWord}`;
             } else if (i % num2 === 0) {
                 // se multipli di 5
+                stats2++;
                 console.log(i + ". " + buzzWord);
                 inserted.innerHTML += `${i} ${buzzWord}`;
             } else if (i % num1 === 0) {
                 // se multipli di 3
+                stats3++
                 console.log(i + ". " + fizzWord);
                 inserted.innerHTML += `${i} ${fizzWord}`;
             } else {
                 // tutti gli altri
+                stats4++
                 console.log(i + ".");
                 inserted.innerHTML += `${i}`;
             };
         };
+        
+        otherStats.innerHTML += `
+            <div class="col-12 bg-black text-center text-white">Ci sono: ${stats1} numeri, divisibili sia per ${num1} che per ${num2}.</div>
+            <div class="col-12 bg-black text-center text-white">Ci sono: ${stats2} numeri, divisibili per ${num1}.</div>
+            <div class="col-12 bg-black text-center text-white">Ci sono: ${stats1} numeri, divisibili per ${num2}.</div>
+            <div class="col-12 bg-black text-center text-white">Ci sono: ${stats1} numeri, non divisibili.</div>
+        `;
+               
     };
 });
