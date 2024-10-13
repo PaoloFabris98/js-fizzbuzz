@@ -69,3 +69,8 @@ buttonSubmit.addEventListener("click", function (event) {
                
     };
 });
+
+stats1 = 0;
+stats2 = 0;
+stats3 = 0;
+stats4 = 0;
