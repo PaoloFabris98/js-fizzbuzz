@@ -6,6 +6,7 @@ const allert = document.getElementById("Alert");
 const otherStats = document.getElementById("other-stats");
 let fizz = document.getElementById("divisore1");
 let Buzz = document.getElementById("divisore2");
+const resetButton = document.getElementById("reset");
 
 const start = 0;
 
@@ -41,16 +42,19 @@ buttonSubmit.addEventListener("click", function (event) {
                 // se multipli di 3 e di 5
                 stats1++;
                 console.log(i + ". " + fizzWord + buzzWord);
+                inserted.classList.add("bg-info");
                 inserted.innerHTML += `${i} ${fizzWord}${buzzWord}`;
             } else if (i % num2 === 0) {
                 // se multipli di 5
                 stats2++;
                 console.log(i + ". " + buzzWord);
+                inserted.classList.add("bg-dark");
                 inserted.innerHTML += `${i} ${buzzWord}`;
             } else if (i % num1 === 0) {
                 // se multipli di 3
                 stats3++
                 console.log(i + ". " + fizzWord);
+                inserted.classList.add("bg-warning");
                 inserted.innerHTML += `${i} ${fizzWord}`;
             } else {
                 // tutti gli altri
@@ -66,8 +70,19 @@ buttonSubmit.addEventListener("click", function (event) {
             <div class="col-12 bg-black text-center text-white">Ci sono: ${stats1} numeri, divisibili per ${num2}.</div>
             <div class="col-12 bg-black text-center text-white">Ci sono: ${stats1} numeri, non divisibili.</div>
         `;
+        
                
     };
+    
+});
+
+resetButton.addEventListener("click", function () {
+    interaction.value = '';
+    fizz.value = '';
+    buzz.value = '';
+    boxs.innerHTML = '';
+    otherStats.innerHTML = '';
+    allert.classList.add("d-none");
 });
 
 stats1 = 0;
