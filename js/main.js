@@ -41,25 +41,25 @@ buttonSubmit.addEventListener("click", function (event) {
             if ((i % num1 === 0) && (i % num2 === 0)) {
                 // se multipli di 3 e di 5
                 stats1++;
-                console.log(i + ". " + fizzWord + buzzWord);
+                console.log(i,fizzWord + buzzWord);
                 inserted.classList.add("bg-info");
                 inserted.innerHTML += `${i} ${fizzWord}${buzzWord}`;
             } else if (i % num2 === 0) {
                 // se multipli di 5
                 stats2++;
-                console.log(i + ". " + buzzWord);
+                console.log(i, buzzWord);
                 inserted.classList.add("bg-dark");
                 inserted.innerHTML += `${i} ${buzzWord}`;
             } else if (i % num1 === 0) {
                 // se multipli di 3
                 stats3++
-                console.log(i + ". " + fizzWord);
+                console.log(i, fizzWord);
                 inserted.classList.add("bg-warning");
                 inserted.innerHTML += `${i} ${fizzWord}`;
             } else {
                 // tutti gli altri
                 stats4++
-                console.log(i + ".");
+                console.log(i);
                 inserted.innerHTML += `${i}`;
             };
         };
