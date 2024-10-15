@@ -37,7 +37,7 @@ buttonSubmit.addEventListener("click", function (event) {
     for (let i = start; i <= it; i++) {
       boxs.innerHTML += `<div class="col-2" id="inserted-case-${i}"><div class="bg-success p-3 text-white text-center rounded-pill mt-2 border" id="inserted-${i}"></div></div>`;
       let inserted = document.getElementById(`inserted-${i}`);
-      if (i % num1 === 0 && i % num2 === 0) {
+      if (i % (num1*num2) === 0) {
         // se multipli di 3 e di 5
         stats1++;
         console.log(i, fizzWord + buzzWord);
